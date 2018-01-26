@@ -1,22 +1,11 @@
 'use strict';
 
-var imgArray = [
-'breuer-building.jpg',
-'guggenheim-museum.jpg',
-'headquarters.jpg',
-'IAC.jpg',
-'new-museum.jpg']
-
-const slider = document.getElementById('currentPhoto');
-
-let step = -1;
-
 function nextPhoto(){
 	step += 1;
 	if (step === imgArray.length) {
 		step = 0;
 	}
-	slider.src = `i/${imgArray[step]}`;
+	sliderPhoto.src = `i/${imgArray[step]}`;
 }
 
 function prevPhoto(){
@@ -24,13 +13,23 @@ function prevPhoto(){
 	if (step < 0) {
 		step = imgArray.length-1;
 	}
-	slider.src = `i/${imgArray[step]}`;
+	sliderPhoto.src = `i/${imgArray[step]}`;
 }
 
 
-nextPhoto();
-const buttonNext = document.getElementById('nextPhoto');
-buttonNext.onclick = nextPhoto;
 
+var imgArray = [
+'breuer-building.jpg',
+'guggenheim-museum.jpg',
+'headquarters.jpg',
+'IAC.jpg',
+'new-museum.jpg']
+
+let step = -1;
+const sliderPhoto = document.getElementById('currentPhoto');
+const buttonNext = document.getElementById('nextPhoto');
 const buttonPrev = document.getElementById('prevPhoto');
+
+nextPhoto();
+buttonNext.onclick = nextPhoto;
 buttonPrev.onclick = prevPhoto;
