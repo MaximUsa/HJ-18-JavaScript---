@@ -16,8 +16,6 @@ function prevPhoto(){
 	sliderPhoto.src = `i/${imgArray[step]}`;
 }
 
-
-
 var imgArray = [
 'breuer-building.jpg',
 'guggenheim-museum.jpg',
