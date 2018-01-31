@@ -18,6 +18,7 @@ let data = [ //список песен
 
 // Хотел использовать JSON но почему-то не получилось. 
 // Завершается ошибкой "переменная data не определена".
+// Хотя в консоль информацию выводит
 /*
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
