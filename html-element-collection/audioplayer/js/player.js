@@ -101,13 +101,11 @@ function playSong(){ //функция проигрывания музыки
 		play.style.display = 'none' //прячем кнопку play
 		pause.style.display = 'inline-block' // показываем кнопку пауза
 		mediaplayer.classList.add('play'); // в список классов добавляем класс play
-		playState.classList.add('play');// в список классов добавляем класс play
 		player.play(); // запускаем проигрыватель
 	 } else {
 	 	pause.style.display = 'none'
 		play.style.display = 'inline-block'
-		mediaplayer.classList.remove('play');// bиз списка классов удаляем класс play
-		playState.classList.remove('play');
+		mediaplayer.classList.remove('play');// из списка классов удаляем класс play
 		player.pause();
            }
 }
