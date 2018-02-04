@@ -1,4 +1,5 @@
 'use strict';
+
 var imgArray = [
 'airmax-jump.png',
 'airmax-on-foot.png',
