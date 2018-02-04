@@ -16,6 +16,27 @@ let data = [ //список песен
 ]
 
 
+const controls = document.getElementsByClassName('controls')[0]; 
+const title = controls.getElementsByClassName('title')[0];
+
+const mediaplayer = document.getElementsByClassName('mediaplayer')[0];
+const player = mediaplayer.getElementsByTagName('audio')[0];
+
+const playState = document.getElementsByClassName('playstate')[0];
+
+const play = playState.getElementsByClassName('fa-play')[0];
+const pause = playState.getElementsByClassName('fa-pause')[0];
+
+const stop = document.getElementsByClassName('stop')[0];
+
+const backward = document.getElementsByClassName('back')[0];
+const forward = document.getElementsByClassName('next')[0];
+
+
+//const mediaplayer = document.getElementsByClassName('mediaplayer')[0];
+
+
+
 // Хотел использовать JSON но почему-то не получилось. 
 // Завершается ошибкой "переменная data не определена".
 // Хотя в консоль информацию выводит
@@ -80,30 +101,16 @@ function playSong(){ //функция проигрывания музыки
 		play.style.display = 'none' //прячем кнопку play
 		pause.style.display = 'inline-block' // показываем кнопку пауза
 		mediaplayer.classList.add('play'); // в список классов добавляем класс play
+		playState.classList.add('play');// в список классов добавляем класс play
 		player.play(); // запускаем проигрыватель
 	 } else {
 	 	pause.style.display = 'none'
 		play.style.display = 'inline-block'
-		mediaplayer.classList.remove('play');
+		mediaplayer.classList.remove('play');// bиз списка классов удаляем класс play
+		playState.classList.remove('play');
 		player.pause();
            }
 }
-
-const controls = document.getElementsByClassName('controls')[0]; 
-const title = controls.getElementsByClassName('title')[0];
-
-const playerDiv = document.getElementsByClassName('mediaplayer')[0];
-const player = playerDiv.getElementsByTagName('audio')[0];
-
-const playState = document.getElementsByClassName('playstate')[0];
-const play = playState.getElementsByClassName('fa-play')[0];
-const pause = playState.getElementsByClassName('fa-pause')[0];
-const stop = document.getElementsByClassName('fa-stop')[0];
-
-const backward = document.getElementsByClassName('fa-backward')[0];
-const forward = document.getElementsByClassName('fa-forward')[0];
-
-const mediaplayer = document.getElementsByClassName('mediaplayer')[0];
 
 
 
@@ -117,8 +124,9 @@ stop.onclick = () => {
 }
 
 nextSong(); 
-pause.onclick = playSong;
-play.onclick = playSong;
+//pause.onclick = playSong;
+//play.onclick = playSong;
+playState.onclick = playSong;
 forward.onclick = nextSong;
 backward.onclick = prevSong;
 
