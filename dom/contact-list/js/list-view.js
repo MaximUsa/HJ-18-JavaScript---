@@ -35,4 +35,11 @@ function init() {
   container.querySelector('.back').addEventListener('click', backClick);
 }
 
+
+
+
 document.addEventListener('DOMContentLoaded', init);
+console.log('22222');
+
+  
+   
