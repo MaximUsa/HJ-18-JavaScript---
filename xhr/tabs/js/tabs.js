@@ -12,7 +12,6 @@ Array.from(tabs).forEach(tab => {
 		tab.addEventListener('click', defaultEvent);
 	});
 
-
 function defaultEvent(event){
 	for (let tab of tabs) {
     tab.classList.remove('active');
@@ -33,7 +32,6 @@ function onLoad() {
 function onLoadSms() {
  	content.innerHTML = requestSms.responseText;
 }
-
 
 function onLoadStart() {
 	preload.classList.remove('hidden');
