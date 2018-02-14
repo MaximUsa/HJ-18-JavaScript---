@@ -14,7 +14,7 @@ Array.from(tabs).forEach(tab => {
 
 function defaultEvent(event){
 	for (let tab of tabs) {
-    tab.classList.remove('active');
+		tab.classList.remove('active');
   }
   this.classList.add('active');      
   event.preventDefault();
