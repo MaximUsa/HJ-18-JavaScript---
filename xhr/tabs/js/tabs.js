@@ -29,10 +29,6 @@ function onLoad() {
 	content.innerHTML = request.responseText;
 }
 
-function onLoadSms() {
- 	content.innerHTML = requestSms.responseText;
-}
-
 function onLoadStart() {
 	preload.classList.remove('hidden');
 }
