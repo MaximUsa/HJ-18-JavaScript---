@@ -9,7 +9,7 @@ for (const key of checkbox) {
 	key.addEventListener('click', chekedTodo);
 	key.checked = false;
 	
-	if (key.checked){
+	if (key.checked) {
 		++counter;
 	}
 	outputValue();
