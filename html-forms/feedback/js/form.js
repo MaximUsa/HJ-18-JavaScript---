@@ -37,7 +37,7 @@ function showForm(event) {
 	input.addEventListener('input', feedBackForm);
 }*/
 
-inputs.forEach((input) => input.addEventListener('input', feedBackForm));
+Array.from(inputs).forEach((input) => input.addEventListener('input', feedBackForm));
 buttomSubmit.addEventListener('click', showForm);
 buttomChange.addEventListener('click', showForm);
 
