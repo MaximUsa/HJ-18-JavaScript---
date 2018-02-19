@@ -2,7 +2,6 @@
 
 function Slider(container) {
 	container.querySelector('li').classList.add('slide-current');
-
 	const next = container.querySelector('a[data-action="next"]');
 	const prev = container.querySelector('a[data-action="prev"]');
 	const first = container.querySelector('a[data-action="first"]');
