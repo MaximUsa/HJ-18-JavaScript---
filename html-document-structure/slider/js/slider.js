@@ -22,7 +22,12 @@ function Slider(container) {
 		currentSlide.classList.remove('slide-current');
 		activatedSlide.classList.add('slide-current'); 
 
-		if (activatedSlide === currentSlide.nextElementSibling) {
+		next.classList.toggle('disabled', activatedSlide.nextElementSibling == null);
+		last.classList.toggle('disabled', activatedSlide.nextElementSibling == null);
+		prev.classList.toggle('disabled', activatedSlide.previousElementSibling == null);
+		first.classList.toggle('disabled', activatedSlide.previousElementSibling == null);
+
+/*	if (activatedSlide === currentSlide.nextElementSibling) {
 			if (activatedSlide === currentSlide.parentElement.lastElementChild) {
 				last.classList.add('disabled');
 				next.classList.add('disabled');
@@ -44,7 +49,7 @@ function Slider(container) {
 				next.classList.remove('disabled');
 				last.classList.remove('disabled');
 			}
-		}
+		}*/
 	}
 
 	function jumpLastSlider(isForward) {
@@ -53,7 +58,12 @@ function Slider(container) {
 		currentSlide.classList.remove('slide-current');
 		activatedSlide.classList.add('slide-current'); 
 
-		if (activatedSlide === currentSlide.parentElement.lastElementChild) {
+		next.classList.toggle('disabled', activatedSlide.nextElementSibling == null);
+		last.classList.toggle('disabled', activatedSlide.nextElementSibling == null);
+		prev.classList.toggle('disabled', activatedSlide.previousElementSibling == null);
+		first.classList.toggle('disabled', activatedSlide.previousElementSibling == null);
+
+		/*if (activatedSlide === currentSlide.parentElement.lastElementChild) {
 			last.classList.add('disabled');
 			next.classList.add('disabled');
 			prev.classList.remove('disabled');
@@ -63,7 +73,7 @@ function Slider(container) {
 			first.classList.add('disabled');
 			last.classList.remove('disabled');
 			next.classList.remove('disabled');
-		}
+		}*/
 	}
 }
 
