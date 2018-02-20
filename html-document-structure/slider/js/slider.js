@@ -69,3 +69,6 @@ function Slider(container) {
 
 const slider = document.querySelectorAll('.slider');
 Array.from(slider).forEach(item => Slider(item));
+
+
+//element.classList.toggle('disabled', activatedSlide.nextElementSibling == null);
