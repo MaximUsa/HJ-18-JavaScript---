@@ -11,7 +11,6 @@ function toggleMenu(event) {
 }
 
 function openLink(event) {
-  console.log(event.currentTarget.textContent);
   event.preventDefault();
   event.stopPropagation();
 }
