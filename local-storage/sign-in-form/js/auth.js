@@ -42,15 +42,18 @@ function singIn (event) {
 function singUp (event) {
 	let obj =  {}
 	const formData = new FormData(formSignUp);
-		
+		console.log(JSON.stringify(formData))
 	for (const [key, value] of formData) {
  		obj[key] = value;
  	}
+ 	formData.append('data', '123');
+ 		console.log(JSON.parse(formData))
 	event.preventDefault();
 	xhr.addEventListener('load', onLoad);
-	xhr.open('POST', 'https://neto-api.herokuapp.com/signup');
+	xhr.open('POST', 'https://neto-api.herokuapp.com/signup', true);
 	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.send(JSON.stringify(obj));
+	//xhr.send(JSON.stringify(obj));
+	xhr.send(formData);
 
 	function onLoad() {
 		if (xhr.status !== 200) {
