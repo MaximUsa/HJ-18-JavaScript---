@@ -1,5 +1,9 @@
 'use strict';
 
+const urlRecipe = 'https://neto-api.herokuapp.com/food/42';
+const urlRating = 'https://neto-api.herokuapp.com/food/42/rating';
+const urlConsumers = 'https://neto-api.herokuapp.com/food/42/consumers'
+
 function loadData(url) {
 	const functionName = 'callback';
 	return new Promise((done, fail) => {
@@ -19,7 +23,7 @@ function food(data) {
 	title.textContent = data.title;
 	ingredients.textContent = data.ingredients.join(', ');
 
-	return 'https://neto-api.herokuapp.com/food/42/rating';
+	return urlRating;
 }
 
 function rating(data) {
@@ -31,11 +35,10 @@ function rating(data) {
 	star.style.width = `${data.rating *10}%`
 	votes.textContent = `${data.votes} оценок`;
 
-	return 'https://neto-api.herokuapp.com/food/42/consumers';
+	return urlConsumers;
 }
 
 function user(data) {
-	console.log(data)
 	const consumers = document.querySelector('[data-consumers]');
 	const span = document.createElement('span');
 	
@@ -49,10 +52,13 @@ function user(data) {
 	consumers.lastElementChild.textContent = `(+${data.total})`;
 }
 
-loadData('https://neto-api.herokuapp.com/food/42')
+loadData(urlRecipe)
 	.then(food)
 	.then(res => loadData(res))
 	.then(rating)
 	.then(res => loadData(res))
-	.then(user);
+	.then(user)
+	.catch(error => {
+		console.log(error);
+	});
 
