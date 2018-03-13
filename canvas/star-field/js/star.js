@@ -40,7 +40,6 @@ function randomColor() {
 			return '#ffe9c4'
 		} else {
 			return '#d4fbff'
-
 		}
 }
 
